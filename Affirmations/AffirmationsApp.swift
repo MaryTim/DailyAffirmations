@@ -35,8 +35,10 @@ struct AffirmationsApp: App {
                             Color.red
                         }
                     }
+                    
             }.accentColor(.brown)
+
+                .modelContainer(modelContainer)
         }
-        .modelContainer(modelContainer)
     }
 }

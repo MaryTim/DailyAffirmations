@@ -15,18 +15,15 @@ struct HomeView: View {
     
     @State var affirmationText: String = ""
     @Environment (\.modelContext) var modelContext
-
-    var affirmation: Affirmation = Affirmation()
+    
+    @Query var favAffrimations: [Affirmation]
     
     @State var backDegree = 0.0
     @State var frontDegree = -90.0
     @State var isFlipped = false
     let durationAndDelay : CGFloat = 0.5
-    
-    
-    
+
     @State private var isFavorite: Bool = false
-    @State private var goToFavourites: Bool = false
     @State private var shareIsPressed: Bool = false
     @State private var animationAmount = 0.0
     
@@ -61,6 +58,7 @@ struct HomeView: View {
                               animationAmount: $animationAmount)
                     CardBack(degree: $backDegree)
                 }
+               // .shadow(radius: 10)
                 .onTapGesture {
                     self.flipCard()
                     if isFlipped {
@@ -68,7 +66,6 @@ struct HomeView: View {
                             animationAmount = 1.0
                             do {
                                 affirmationText = try await repository.fetchAffirmation().affirmation
-                                affirmation.text = affirmationText
                             } catch {
                                 affirmationText = "error"
                             }
@@ -81,18 +78,18 @@ struct HomeView: View {
                 }
                 
                 HStack(alignment: .center, spacing: 60) {
-                    
                     Button {
                         withAnimation {
                             self.isFavorite.toggle()
                         }
+                        
                         if isFavorite {
-                          //  affirmation.isSelected = true
+                            let affirmation = Affirmation(text: affirmationText, isSelected: true)
                             modelContext.insert(affirmation)
                         } else {
-                           // affirmation.isSelected = false
-                            modelContext.delete(affirmation)
-
+                            if let first = favAffrimations.first(where: { $0.text == affirmationText }) {
+                                modelContext.delete(first)
+                            }
                         }
                     } label: {
                         Image(systemName: isFavorite ? "heart.fill" : "heart")
@@ -103,7 +100,7 @@ struct HomeView: View {
                     }
                     .disabled(affirmationText.isEmpty)
                     .contentTransition(.symbolEffect(.replace))
-
+                    
                     ShareLink(item: affirmationText) {
                         // later add a link to the app
                         Image(systemName: shareIsPressed ? "arrow.up.square.fill" : "arrow.up.square")
@@ -115,28 +112,24 @@ struct HomeView: View {
                     .onTapGesture {
                         shareIsPressed = true
                     }
-                    .disabled(affirmationText.isEmpty)
-                    
-                    Button {
-                        withAnimation {
-                            self.goToFavourites = true
-                        }
-                        navigationPath.append(Route.favourites)
-                    } label: {
-                        Image(systemName: goToFavourites ? "heart.circle.fill" : "heart.circle")
-                            .resizable()
-                            .frame(width: 30, height: 30)
-                            .foregroundColor(.brown)
-                    }
-                    .contentTransition(.symbolEffect(.replace))
+                    .opacity(affirmationText.isEmpty ? 0 : 1)
                 }
             }
             .padding(40)
             .onAppear(perform: {
-                self.goToFavourites = false
                 self.shareIsPressed = false
-               // self.isFavorite = affirmation.isSelected
+                self.isFavorite = favAffrimations.contains { $0.text == affirmationText }
             })
+        }
+        .toolbar {
+            Button {
+                navigationPath.append(Route.favourites)
+            } label: {
+                Image(systemName: "list.bullet.circle")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .foregroundColor(.brown)
+            }
         }
     }
 }
