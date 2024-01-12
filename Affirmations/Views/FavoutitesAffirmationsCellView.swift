@@ -1,5 +1,5 @@
 //
-//  FavoutitesAffirmationsCell.swift
+//  FavoutitesAffirmationsCellView.swift
 //  Affirmations
 //
 //  Created by Maria Budkevich on 06/01/2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FavoutitesAffirmationsCell: View {
+struct FavoutitesAffirmationsCellView: View {
     
     let affirmationText: String
     

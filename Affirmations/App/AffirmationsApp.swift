@@ -11,9 +11,8 @@ import SwiftData
 @main
 struct AffirmationsApp: App {
     
-    @State var navigationPath = [Route]()
-    
-    let modelContainer: ModelContainer
+    @State private var navigationPath = [Route]()
+    private let modelContainer: ModelContainer
     
     init() {
         do {
@@ -26,19 +25,17 @@ struct AffirmationsApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack(path: $navigationPath) {
-                HomeView(repository: DefaultAffirmationsRepository(httpService: DefaultHTTPService(urlSession: URLSession.shared)), navigationPath: $navigationPath)
+                HomeView(navigationPath: $navigationPath)
                     .navigationDestination(for: Route.self) { route in
                         switch route {
                         case .favourites:
-                            FavouriteAffirmations()
-                        case .sharing:
-                            Color.red
+                            FavouriteAffirmationsView()
                         }
                     }
-                    
-            }.accentColor(.brown)
-
-                .modelContainer(modelContainer)
+                
+            }
+            .accentColor(.brown)
+            .modelContainer(modelContainer)
         }
     }
 }

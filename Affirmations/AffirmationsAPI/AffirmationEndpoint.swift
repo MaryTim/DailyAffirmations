@@ -12,7 +12,7 @@ enum AffirmationEndpoint: Endpoint {
     case affirmation
     
     var scheme: String {
-        return "https"
+        "https"
     }
     
     var host: String {

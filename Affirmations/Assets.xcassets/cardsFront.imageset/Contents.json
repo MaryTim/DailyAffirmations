@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "v933-audi-35-e.jpg",
+      "filename" : "6510815.pdf",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "6510815 copy 2.pdf",
       "idiom" : "universal"
     }
   ],
