@@ -33,12 +33,13 @@
 		A7D8E1302B485DE9000B5D1F /* AffirmationResponse+Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8E12F2B485DE9000B5D1F /* AffirmationResponse+Stub.swift */; };
 		A7D8E1332B4971B8000B5D1F /* CardBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8E1322B4971B8000B5D1F /* CardBack.swift */; };
 		A7D8E1352B4971C8000B5D1F /* CardFront.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8E1342B4971C8000B5D1F /* CardFront.swift */; };
-		A7D8E1372B498E68000B5D1F /* FavouriteAffirmations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8E1362B498E68000B5D1F /* FavouriteAffirmations.swift */; };
-		A7D8E1392B498FAD000B5D1F /* FavoutitesAffirmationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8E1382B498FAD000B5D1F /* FavoutitesAffirmationsCell.swift */; };
+		A7D8E1372B498E68000B5D1F /* FavouriteAffirmationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8E1362B498E68000B5D1F /* FavouriteAffirmationsView.swift */; };
+		A7D8E1392B498FAD000B5D1F /* FavoutitesAffirmationsCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8E1382B498FAD000B5D1F /* FavoutitesAffirmationsCellView.swift */; };
 		A7D8E1402B49DCCA000B5D1F /* Merienda-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7D8E13F2B49DCCA000B5D1F /* Merienda-SemiBold.ttf */; };
 		A7D8E1422B49DD5F000B5D1F /* Cinzel-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7D8E1412B49DD5F000B5D1F /* Cinzel-SemiBold.ttf */; };
-		A7D8E1452B49F0C3000B5D1F /* AffirmationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8E1442B49F0C3000B5D1F /* AffirmationsViewModel.swift */; };
 		A7D8E1472B4AD29D000B5D1F /* Affirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8E1462B4AD29D000B5D1F /* Affirmation.swift */; };
+		CCC30A1D2B51998000E91BA2 /* DefaultAffirmationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC30A1C2B51998000E91BA2 /* DefaultAffirmationsRepository.swift */; };
+		CCC30A1F2B51999700E91BA2 /* AffirmationRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC30A1E2B51999700E91BA2 /* AffirmationRepositoryError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,13 +89,14 @@
 		A7D8E12F2B485DE9000B5D1F /* AffirmationResponse+Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AffirmationResponse+Stub.swift"; sourceTree = "<group>"; };
 		A7D8E1322B4971B8000B5D1F /* CardBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardBack.swift; sourceTree = "<group>"; };
 		A7D8E1342B4971C8000B5D1F /* CardFront.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFront.swift; sourceTree = "<group>"; };
-		A7D8E1362B498E68000B5D1F /* FavouriteAffirmations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteAffirmations.swift; sourceTree = "<group>"; };
-		A7D8E1382B498FAD000B5D1F /* FavoutitesAffirmationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoutitesAffirmationsCell.swift; sourceTree = "<group>"; };
+		A7D8E1362B498E68000B5D1F /* FavouriteAffirmationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteAffirmationsView.swift; sourceTree = "<group>"; };
+		A7D8E1382B498FAD000B5D1F /* FavoutitesAffirmationsCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoutitesAffirmationsCellView.swift; sourceTree = "<group>"; };
 		A7D8E13C2B49DB4B000B5D1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A7D8E13F2B49DCCA000B5D1F /* Merienda-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merienda-SemiBold.ttf"; sourceTree = "<group>"; };
 		A7D8E1412B49DD5F000B5D1F /* Cinzel-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-SemiBold.ttf"; sourceTree = "<group>"; };
-		A7D8E1442B49F0C3000B5D1F /* AffirmationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationsViewModel.swift; sourceTree = "<group>"; };
 		A7D8E1462B4AD29D000B5D1F /* Affirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affirmation.swift; sourceTree = "<group>"; };
+		CCC30A1C2B51998000E91BA2 /* DefaultAffirmationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAffirmationsRepository.swift; sourceTree = "<group>"; };
+		CCC30A1E2B51999700E91BA2 /* AffirmationRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationRepositoryError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,16 +148,14 @@
 			isa = PBXGroup;
 			children = (
 				A7D8E13C2B49DB4B000B5D1F /* Info.plist */,
-				A7D8E1462B4AD29D000B5D1F /* Affirmation.swift */,
-				A7D8E1032B484F05000B5D1F /* Route.swift */,
-				A7D8E0D72B484CE2000B5D1F /* AffirmationsApp.swift */,
+				CCC30A202B5199DD00E91BA2 /* App */,
 				A7D8E1182B485537000B5D1F /* AffirmationsAPI */,
+				CCC30A192B51993C00E91BA2 /* Models */,
+				CCC30A182B51992D00E91BA2 /* Navigation */,
 				A7D8E1312B49719F000B5D1F /* Views */,
-				A7D8E1432B49F09F000B5D1F /* ViewModels */,
 				A7D8E10F2B48539F000B5D1F /* Networking */,
 				A7D8E0DD2B484CE3000B5D1F /* Assets.xcassets */,
-				A7D8E13F2B49DCCA000B5D1F /* Merienda-SemiBold.ttf */,
-				A7D8E1412B49DD5F000B5D1F /* Cinzel-SemiBold.ttf */,
+				CCC30A242B51A31800E91BA2 /* Fonts */,
 				A7D8E0DF2B484CE3000B5D1F /* Preview Content */,
 			);
 			path = Affirmations;
@@ -210,8 +210,9 @@
 			isa = PBXGroup;
 			children = (
 				A7D8E1192B485551000B5D1F /* AffirmationsRepository.swift */,
+				CCC30A1E2B51999700E91BA2 /* AffirmationRepositoryError.swift */,
+				CCC30A1C2B51998000E91BA2 /* DefaultAffirmationsRepository.swift */,
 				A7D8E11B2B48566E000B5D1F /* AffirmationEndpoint.swift */,
-				A7D8E11D2B485831000B5D1F /* AffirmationResponse.swift */,
 			);
 			path = AffirmationsAPI;
 			sourceTree = "<group>";
@@ -222,18 +223,44 @@
 				A7D8E0D92B484CE2000B5D1F /* HomeView.swift */,
 				A7D8E1322B4971B8000B5D1F /* CardBack.swift */,
 				A7D8E1342B4971C8000B5D1F /* CardFront.swift */,
-				A7D8E1362B498E68000B5D1F /* FavouriteAffirmations.swift */,
-				A7D8E1382B498FAD000B5D1F /* FavoutitesAffirmationsCell.swift */,
+				A7D8E1362B498E68000B5D1F /* FavouriteAffirmationsView.swift */,
+				A7D8E1382B498FAD000B5D1F /* FavoutitesAffirmationsCellView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		A7D8E1432B49F09F000B5D1F /* ViewModels */ = {
+		CCC30A182B51992D00E91BA2 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				A7D8E1442B49F0C3000B5D1F /* AffirmationsViewModel.swift */,
+				A7D8E1032B484F05000B5D1F /* Route.swift */,
 			);
-			path = ViewModels;
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CCC30A192B51993C00E91BA2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A7D8E1462B4AD29D000B5D1F /* Affirmation.swift */,
+				A7D8E11D2B485831000B5D1F /* AffirmationResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CCC30A202B5199DD00E91BA2 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A7D8E0D72B484CE2000B5D1F /* AffirmationsApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CCC30A242B51A31800E91BA2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A7D8E13F2B49DCCA000B5D1F /* Merienda-SemiBold.ttf */,
+				A7D8E1412B49DD5F000B5D1F /* Cinzel-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -370,20 +397,21 @@
 			files = (
 				A7D8E10D2B485396000B5D1F /* Endpoint.swift in Sources */,
 				A7D8E10A2B485389000B5D1F /* URLSessionProtocol.swift in Sources */,
+				CCC30A1D2B51998000E91BA2 /* DefaultAffirmationsRepository.swift in Sources */,
 				A7D8E1092B485389000B5D1F /* HTTPService.swift in Sources */,
 				A7D8E1082B485389000B5D1F /* URLSession+Extensions.swift in Sources */,
 				A7D8E10E2B485396000B5D1F /* HttpMethod.swift in Sources */,
-				A7D8E1452B49F0C3000B5D1F /* AffirmationsViewModel.swift in Sources */,
 				A7D8E0DA2B484CE2000B5D1F /* HomeView.swift in Sources */,
 				A7D8E11A2B485551000B5D1F /* AffirmationsRepository.swift in Sources */,
 				A7D8E1352B4971C8000B5D1F /* CardFront.swift in Sources */,
 				A7D8E1472B4AD29D000B5D1F /* Affirmation.swift in Sources */,
 				A7D8E11E2B485831000B5D1F /* AffirmationResponse.swift in Sources */,
 				A7D8E11C2B48566E000B5D1F /* AffirmationEndpoint.swift in Sources */,
-				A7D8E1392B498FAD000B5D1F /* FavoutitesAffirmationsCell.swift in Sources */,
+				CCC30A1F2B51999700E91BA2 /* AffirmationRepositoryError.swift in Sources */,
+				A7D8E1392B498FAD000B5D1F /* FavoutitesAffirmationsCellView.swift in Sources */,
 				A7D8E1332B4971B8000B5D1F /* CardBack.swift in Sources */,
 				A7D8E0D82B484CE2000B5D1F /* AffirmationsApp.swift in Sources */,
-				A7D8E1372B498E68000B5D1F /* FavouriteAffirmations.swift in Sources */,
+				A7D8E1372B498E68000B5D1F /* FavouriteAffirmationsView.swift in Sources */,
 				A7D8E1042B484F05000B5D1F /* Route.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,7 +584,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Affirmations/Preview Content\"";
-				DEVELOPMENT_TEAM = 9ZDL74J7P7;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Affirmations/Info.plist;
@@ -586,7 +614,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Affirmations/Preview Content\"";
-				DEVELOPMENT_TEAM = 9ZDL74J7P7;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Affirmations/Info.plist;
