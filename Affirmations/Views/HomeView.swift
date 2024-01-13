@@ -15,7 +15,7 @@ struct HomeView: View {
     
     @Environment(\.modelContext) private var modelContext
     
-    @Query private var favAffrimations: [Affirmation]
+    @Query private var favoriteAffrimations: [Affirmation]
     
     @State private var affirmationText: String = ""
     @State private var backDegree = 0.0
@@ -23,6 +23,7 @@ struct HomeView: View {
     @State private var isFlipped = false
     @State private var isFavorite: Bool = false
     @State private var shareIsPressed: Bool = false
+    @State private var isShowingError: Bool = false
     @State private var animationAmount = 0.0
     
     private let durationAndDelay : CGFloat = 0.5
@@ -38,7 +39,7 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             Color.screenBackground
-                .opacity(0.4)
+                .opacity(0.5)
                 .ignoresSafeArea()
             
             VStack(spacing: 50) {
@@ -48,14 +49,14 @@ struct HomeView: View {
             .padding(40)
             .onAppear(perform: {
                 self.shareIsPressed = false
-                self.isFavorite = favAffrimations.contains { $0.text == affirmationText }
+                self.isFavorite = favoriteAffrimations.contains { $0.text == affirmationText }
             })
         }
         .toolbar {
             Button {
                 navigationPath.append(Route.favourites)
             } label: {
-                Image(systemName: "list.bullet.circle")
+                Image(systemName: Asset.Image.bulletList)
                     .resizable()
                     .frame(width: 30, height: 30)
                     .foregroundColor(.brown)
@@ -80,14 +81,26 @@ struct HomeView: View {
                     do {
                         affirmationText = try await repository.fetchAffirmation().affirmation
                     } catch {
-                        // Maybe add an alert with a try again button
-                        affirmationText = "error"
+                        isShowingError = true
                     }
                 }
             } else {
                 affirmationText = ""
                 animationAmount = 0.0
                 isFavorite = false
+            }
+        }
+        .alert("Something went wrong...", isPresented: $isShowingError) {
+            Button {
+                Task {
+                    do {
+                        affirmationText = try await repository.fetchAffirmation().affirmation
+                    } catch {
+                        isShowingError = true
+                    }
+                }
+            } label: {
+                Text("Try again")
             }
         }
     }
@@ -97,18 +110,18 @@ struct HomeView: View {
             Button {
                 updateFavorites()
             } label: {
-                Image(systemName: isFavorite ? "heart.fill" : "heart")
+                Image(systemName: isFavorite ? Asset.Image.heartFill : Asset.Image.heart)
                     .resizable()
                     .frame(width: 30, height: 30)
                     .foregroundColor(.brown)
                 
             }
-            .disabled(affirmationText.isEmpty)
+            .opacity(affirmationText.isEmpty ? 0 : 1).animation(.linear(duration: 0.3))
             .contentTransition(.symbolEffect(.replace))
             
             ShareLink(item: affirmationText) {
                 // later add a link to the app
-                Image(systemName: shareIsPressed ? "arrow.up.square.fill" : "arrow.up.square")
+                Image(systemName: shareIsPressed ? Asset.Image.arrowUpFill : Asset.Image.arrowUp)
                     .resizable()
                     .frame(width: 30, height: 30)
                     .foregroundColor(.brown)
@@ -117,7 +130,7 @@ struct HomeView: View {
             .onTapGesture {
                 shareIsPressed = true
             }
-            .opacity(affirmationText.isEmpty ? 0 : 1)
+            .opacity(affirmationText.isEmpty ? 0 : 1).animation(.linear(duration: 0.3))
         }
     }
 }
@@ -148,18 +161,14 @@ extension HomeView {
         }
         
         if isFavorite {
-            let affirmation = Affirmation(text: affirmationText, isSelected: true)
-            modelContext.insert(affirmation)
+            if let first = favoriteAffrimations.first(where: { $0.text == affirmationText }) { } else {
+                let affirmation = Affirmation(text: affirmationText, isSelected: true)
+                modelContext.insert(affirmation)
+            }
         } else {
-            if let first = favAffrimations.first(where: { $0.text == affirmationText }) {
+            if let first = favoriteAffrimations.first(where: { $0.text == affirmationText }) {
                 modelContext.delete(first)
             }
         }
-    }
-}
-
-extension HomeView {
-    private enum Defaults {
-        static let size = 10
     }
 }

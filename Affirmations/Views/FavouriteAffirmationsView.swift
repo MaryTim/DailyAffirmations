@@ -10,20 +10,19 @@ import SwiftData
 
 struct FavouriteAffirmationsView: View {
     
-    private let text: String = "You don't have any favourites yet."
     @Environment (\.modelContext) private var modelContext
-    @Query private var favoriteAffrimations: [Affirmation]
+    @Query(sort: \Affirmation.date) private var favoriteAffrimations: [Affirmation]
     
     var body: some View {
         ZStack {
             if favoriteAffrimations.isEmpty {
-                Text(text)
+                Text(Asset.Text.emptyFavorites)
                     .foregroundColor(.brown)
-                    .font(.custom("Merienda-SemiBold", size: 18))
+                    .font(.custom(Asset.Font.customFont, size: 18))
             } else {
                 List {
                     ForEach(favoriteAffrimations) { affirmation in
-                        FavoutitesAffirmationsCell(affirmationText: affirmation.text)
+                        FavoutitesAffirmationsCellView(affirmationText: affirmation.text)
                             .frame(maxWidth: .infinity)
                             .listRowSeparator(.hidden)
                     }

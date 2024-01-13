@@ -12,7 +12,7 @@ struct CardBack: View {
     @Binding var degree: Double
     
     var body: some View {
-        Image("cardsBack")
+        Image(Asset.Image.cardBack)
             .resizable()
             .cornerRadius(10)
             .overlay(

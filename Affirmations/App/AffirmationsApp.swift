@@ -32,7 +32,6 @@ struct AffirmationsApp: App {
                             FavouriteAffirmationsView()
                         }
                     }
-                
             }
             .accentColor(.brown)
             .modelContainer(modelContainer)

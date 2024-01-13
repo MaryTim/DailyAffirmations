@@ -13,12 +13,12 @@ struct FavoutitesAffirmationsCellView: View {
     
     var body: some View {
         ZStack {
-            Color("backgroundColor").opacity(0.3)
+            Color.screenBackground.opacity(0.5)
                 
             Text(affirmationText)
                 .foregroundColor(.brown)
                 .multilineTextAlignment(.leading)
-                .font(.custom("Merienda-SemiBold", size: 16))
+                .font(.custom(Asset.Font.customFont, size: 16))
                 
                 .padding(.vertical, 20)
                 .padding(.horizontal, 15)

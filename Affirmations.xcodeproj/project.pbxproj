@@ -38,6 +38,7 @@
 		A7D8E1402B49DCCA000B5D1F /* Merienda-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7D8E13F2B49DCCA000B5D1F /* Merienda-SemiBold.ttf */; };
 		A7D8E1422B49DD5F000B5D1F /* Cinzel-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7D8E1412B49DD5F000B5D1F /* Cinzel-SemiBold.ttf */; };
 		A7D8E1472B4AD29D000B5D1F /* Affirmation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8E1462B4AD29D000B5D1F /* Affirmation.swift */; };
+		A7D8E14A2B51E439000B5D1F /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D8E1492B51E439000B5D1F /* Asset.swift */; };
 		CCC30A1D2B51998000E91BA2 /* DefaultAffirmationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC30A1C2B51998000E91BA2 /* DefaultAffirmationsRepository.swift */; };
 		CCC30A1F2B51999700E91BA2 /* AffirmationRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC30A1E2B51999700E91BA2 /* AffirmationRepositoryError.swift */; };
 /* End PBXBuildFile section */
@@ -95,6 +96,7 @@
 		A7D8E13F2B49DCCA000B5D1F /* Merienda-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Merienda-SemiBold.ttf"; sourceTree = "<group>"; };
 		A7D8E1412B49DD5F000B5D1F /* Cinzel-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cinzel-SemiBold.ttf"; sourceTree = "<group>"; };
 		A7D8E1462B4AD29D000B5D1F /* Affirmation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affirmation.swift; sourceTree = "<group>"; };
+		A7D8E1492B51E439000B5D1F /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		CCC30A1C2B51998000E91BA2 /* DefaultAffirmationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAffirmationsRepository.swift; sourceTree = "<group>"; };
 		CCC30A1E2B51999700E91BA2 /* AffirmationRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationRepositoryError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,13 +152,14 @@
 				A7D8E13C2B49DB4B000B5D1F /* Info.plist */,
 				CCC30A202B5199DD00E91BA2 /* App */,
 				A7D8E1182B485537000B5D1F /* AffirmationsAPI */,
+				CCC30A242B51A31800E91BA2 /* Fonts */,
 				CCC30A192B51993C00E91BA2 /* Models */,
 				CCC30A182B51992D00E91BA2 /* Navigation */,
-				A7D8E1312B49719F000B5D1F /* Views */,
 				A7D8E10F2B48539F000B5D1F /* Networking */,
-				A7D8E0DD2B484CE3000B5D1F /* Assets.xcassets */,
-				CCC30A242B51A31800E91BA2 /* Fonts */,
+				A7D8E1482B51E3E9000B5D1F /* Style */,
+				A7D8E1312B49719F000B5D1F /* Views */,
 				A7D8E0DF2B484CE3000B5D1F /* Preview Content */,
+				A7D8E0DD2B484CE3000B5D1F /* Assets.xcassets */,
 			);
 			path = Affirmations;
 			sourceTree = "<group>";
@@ -227,6 +230,14 @@
 				A7D8E1382B498FAD000B5D1F /* FavoutitesAffirmationsCellView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		A7D8E1482B51E3E9000B5D1F /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				A7D8E1492B51E439000B5D1F /* Asset.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 		CCC30A182B51992D00E91BA2 /* Navigation */ = {
@@ -404,6 +415,7 @@
 				A7D8E0DA2B484CE2000B5D1F /* HomeView.swift in Sources */,
 				A7D8E11A2B485551000B5D1F /* AffirmationsRepository.swift in Sources */,
 				A7D8E1352B4971C8000B5D1F /* CardFront.swift in Sources */,
+				A7D8E14A2B51E439000B5D1F /* Asset.swift in Sources */,
 				A7D8E1472B4AD29D000B5D1F /* Affirmation.swift in Sources */,
 				A7D8E11E2B485831000B5D1F /* AffirmationResponse.swift in Sources */,
 				A7D8E11C2B48566E000B5D1F /* AffirmationEndpoint.swift in Sources */,
@@ -584,7 +596,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Affirmations/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9ZDL74J7P7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Affirmations/Info.plist;
@@ -614,7 +626,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Affirmations/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9ZDL74J7P7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Affirmations/Info.plist;
